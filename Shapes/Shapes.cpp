@@ -5,12 +5,22 @@ class BaseShape
 	virtual void DebugPrint() {}
 };
 
-//class Point : public BaseShape
-//{
-//private:
-//	float location_X;
-//	float location_Y
-//};
+class Point : public BaseShape
+{
+private:
+	float X;
+	float Y;
+public:
+	Point() {};
+	Point(float a, float b) {
+		X = a;
+		Y = b;
+	}
+	float Location() {
+		float result[2] = { X,Y };
+		return result[2];
+	}
+};
 
 class Square : public BaseShape
 {
