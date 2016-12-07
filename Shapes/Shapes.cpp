@@ -15,25 +15,39 @@ class BaseShape
 class Square : public BaseShape
 {
 private:
-	float location_X;
-	float location_Y;
+	float X;
+	float Y;
 public:
 	Square() {};
 	Square(float a, float b) {
-		location_X = a;
-		location_Y = b;
+		X = a;
+		Y = b;
 	}
-	float Center[2]
-	float corner1[2]{
-		
+	float corner1()
+	{
+		float result[2];
+		result[0] = X;
+		result[1] = Y;
+		return result[2];
 	}
-	float corner2[2]{
+	float corner2()
+	{
+		float result[2] = {X + X, Y};
+		return result[2];
+	}
+	float corner3()
+	{
+		float result[2] = { X, Y - X };
+		return result[2];
+	}
+	float corner4()
+	{
+		float result[2] = { X + X, Y - X };
+		return result[2];
+	}
+	float Center()
+	{
+		float result[2] = { (X + ((X + X) / 2)),(Y - ((Y + Y) / 2)) };
+	}
 
-	}
-	float corner3[2]{
-
-	}
-	float corner4[2]{
-
-	}
 };
